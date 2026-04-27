@@ -72,7 +72,7 @@ All data is **permanent, tamper-proof, and publicly verifiable**.
 
 ## 🏗️ System Architecture Flow
 
-![System Architecture Design](./directory_listing/src/assets/system_architecture_design.png)
+![System Architecture Design](./src/assets/system_architecture_design.png)
 
 ### 1. Frontend Layer (React + Vite)
 
