@@ -1,6 +1,6 @@
 # directory_listing<div align="center">
 
-  <img src="./directory_listing/public/nero_logo.png" alt="Nero Directory Logo" width="200" style="border-radius: 50%; box-shadow: 0 0 20px rgba(128,0,255,0.6);" />
+  <img src="./public/nero_logo.png" alt="Nero Directory Logo" width="200" style="border-radius: 50%; box-shadow: 0 0 20px rgba(128,0,255,0.6);" />
   <h1>Nero Business Directory</h1>
   <p><strong>A Next-Generation Decentralized On-Chain Utility on the NERO Chain</strong></p>
 </div>
