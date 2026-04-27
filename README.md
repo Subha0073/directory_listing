@@ -1,97 +1,183 @@
-<div align="center">
-  <img src="./directory_listing/public/nero_logo.png" alt="Nero Directory Logo" width="200" style="border-radius: 50%; box-shadow: 0 0 20px rgba(128,0,255,0.6);"/>
+# directory_listing<div align="center">
+
+  <img src="./directory_listing/public/nero_logo.png" alt="Nero Directory Logo" width="200" style="border-radius: 50%; box-shadow: 0 0 20px rgba(128,0,255,0.6);" />
   <h1>Nero Business Directory</h1>
-  <p><strong>A Next-Generation Decentralized On-Chain Utility on NERO Chain</strong></p>
+  <p><strong>A Next-Generation Decentralized On-Chain Utility on the NERO Chain</strong></p>
 </div>
 
+```js
+const CONTRACT_ADDRESS = "YOUR_CONTRACT_ADDRESS_AFTER_DEPLOYMENT";
+const NETWORK = "NERO Testnet (Chain ID: YOUR_CHAIN_ID)";
 ```
-CONTRACT_ADDRESS = "give_your_own_contract_address_after_deployment"
-NETWORK = "NERO Testnet (Chain ID: Give_your_chain_ID)"
-```
-
-# 👋 Welcome to the Nero Business Directory
-🚀 Unleashing the power of Web3, this project leverages the **NERO Chain** to maintain a global, immutable directory of businesses. Originally conceptualized for Stellar, the platform has been successfully migrated to EVM and is built natively on decentralized principles to ensure full transparency and trustless peer-to-peer verification.
-
-# 🧑‍💻 Tech Stack
-- 🧑‍🎓 **Smart Contract Layer**: Deployed natively via **Solidity** to the **NERO Testnet** for immutable CRUD operations and network state modifications. Uses Hardhat for development.
-- 🌱 **Integration Layer**: Utilizes `ethers.js` alongside MetaMask for secure wallet connection, signing, and executing transactions on the EVM network.
-- 💬 **Architectural Flow**: Designed to act as a direct, trustless peer-to-peer verification hub.
-- 🚀 **Next-Gen Frontend**: A fully custom React 19 visual interface powered by Vite to display blockchain data streams.
-
-# 🌐 Decentralized Features
-
-### **1. On-Chain Deployment**
-Interacting directly with EVM smart contracts, users can deploy trustless profiles for newly verified businesses (Metadata, Location, Routing) and permanently anchor them onto the NERO ledger.
-
-### **2. Peer Consensus & Ratings**
-Leveraging decentralized peer verification parameters, any connected node/wallet can function as a *Rater*. Trust mechanics and verification status are embedded directly into the Solidity contract logic.
-
-### **3. Seamless Wallet Integration**
-Fully integrated with MetaMask to automatically detect the NERO network, request chain switching, or add the NERO Testnet to the user's wallet automatically if missing.
 
 ---
 
-### 🏗️ System Architecture Flow
+## 👋 Welcome to the Nero Business Directory
+
+🚀 **Nero Business Directory** is a Web3-powered decentralized application built on the **NERO Chain** to create a global, immutable directory of businesses.
+
+Originally conceptualized for Stellar, the project has been successfully migrated to an **EVM-compatible architecture**, enabling seamless smart contract interaction and improved scalability.
+
+The platform is designed on **trustless, peer-to-peer principles**, ensuring transparency, security, and decentralized verification.
+
+---
+
+## 🧑‍💻 Tech Stack
+
+### 🧑‍🎓 Smart Contract Layer
+
+- Developed using **Solidity**
+- Deployed on the **NERO Testnet**
+- Handles immutable CRUD operations and state changes
+- Built and tested with **Hardhat**
+
+### 🌱 Integration Layer
+
+- Uses **ethers.js** for blockchain interaction
+- Integrated with **MetaMask** for:
+  - Wallet connection
+  - Transaction signing
+  - Network execution
+
+### 💬 Architecture
+
+- Fully **decentralized peer-to-peer verification system**
+- No centralized backend
+
+### 🚀 Frontend
+
+- Built with **React 19 + Vite**
+- Optimized for real-time blockchain data rendering
+
+---
+
+## 🌐 Decentralized Features
+
+### 🔗 1. On-Chain Deployment
+
+Users can create business listings directly on-chain, including metadata, location, and routing details.  
+All data is **permanent, tamper-proof, and publicly verifiable**.
+
+### ⭐ 2. Peer Consensus & Ratings
+
+- Any connected wallet can act as a **rater/verifier**
+- Trust and reputation are enforced via smart contract logic
+
+### 🔐 3. Seamless Wallet Integration
+
+- Automatically detects the NERO network
+- Prompts users to switch or add the network if needed
+
+---
+
+## 🏗️ System Architecture Flow
 
 ![System Architecture Design](./directory_listing/src/assets/system_architecture_design.png)
 
-#### 1. Frontend Layer (React + Vite)
-- **App Shell (`App.jsx`)**: The core entry point that maintains the application state. It manages connection details, loading states, and the current interactive view (`landing` vs `app`).
-- **UI Components & Glassmorphism (`App.css`)**: Pure CSS styling utilizing `--mouse-x` and `--mouse-y` runtime properties to handle 3D hardware-accelerated transforms and interactive heat-glow lighting without heavy external animation libraries.
-- **State Management**: Uses React hooks (`useState`, `useEffect`, `useRef`) for local state. Actions that interact with the blockchain trigger a loading sequence and handle promise resolutions cleanly to update the UI "Terminal".
+### 1. Frontend Layer (React + Vite)
 
-#### 2. Integration Layer (`lib/nero.js`)
-- Interfaces between the React frontend and the EVM Smart Contract on the NERO chain. 
-- Handles MetaMask wallet authentication, connection, and automatic network switching (`checkConnection`, `connectWallet`, `addAndSwitchNeroNetwork`).
-- Wraps all EVM smart contract network calls into asynchronous functions (`createListing`, `updateListing`, `verifyListing`, etc.) using `ethers.js`.
+- **App Shell (`App.jsx`)**
+  - Manages application state, wallet connection, and UI views
 
-#### 3. Blockchain Layer (NERO Testnet / EVM)
-- **Smart Contract (`DirectoryListing.sol`)**: Handles the CRUD operations and immutable storage for the business directory on the NERO EVM network.
-- **State Changes**: Methods for listing creation, updating fields, rating modifications, and deactivations.
-- **Verification**: Built-in mechanisms embedded in the contract state to keep listing data trustworthy.
+- **UI & Styling (`App.css`)**
+  - Uses advanced CSS (`--mouse-x`, `--mouse-y`)
+  - Enables smooth 3D and glow effects
+
+- **State Management**
+  - Uses React hooks (`useState`, `useEffect`, `useRef`)
+  - Handles async blockchain interactions
 
 ---
 
-# 🚀 Getting Started
+### 2. Integration Layer (`lib/nero.js`)
 
-### Prerequisites
-- Node.js (matches `latest` stable build)
-- [MetaMask](https://metamask.io/) Browser Extension
-- Some testnet NERO from the [NERO Faucet](https://faucet.nerochain.io/)
-
-### Initialization
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/pratyush06-aec/directorylisting_NERO.git
-   cd directory_listing
-   ```
-
-2. **Install node dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Ignite the Local Network:**
-   ```bash
-   npm run dev
-   ```
-
-To explore the dApp locally, boot up `http://localhost:5173`. Ensure your MetaMask extension is connected and switched to the **NERO Testnet**.
-
-### Smart Contract Deployment (For Developers)
-
-If you wish to deploy your own instance of the contract:
-1. Navigate to the `evm-contracts` folder.
-2. Run `npm install` inside that folder.
-3. Update `hardhat.config.js` with your Private Key.
-4. Run the deployment script:
-   ```bash
-   npx hardhat run scripts/deploy.js --network neroTestnet
-   ```
-5. Take the resulting contract address and update the `CONTRACT_ADDRESS` constant in `lib/nero.js`.
+- Connects frontend with blockchain
+- Handles:
+  - Wallet connection (`connectWallet`)
+  - Network switching (`addAndSwitchNeroNetwork`)
+- Provides async contract methods:
+  - `createListing`
+  - `updateListing`
+  - `verifyListing`
 
 ---
+
+### 3. Blockchain Layer (NERO Testnet / EVM)
+
+- **Smart Contract (`DirectoryListing.sol`)**
+  - Stores business data on-chain
+  - Supports create, update, verify, and deactivate operations
+
+- **Verification System**
+  - Built into contract logic to ensure trust
+
+---
+
+## 🚀 Getting Started
+
+### 📋 Prerequisites
+
+- Node.js (latest stable version)
+- MetaMask browser extension
+- Testnet NERO tokens from faucet
+
+---
+
+### ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/pratyush06-aec/directorylisting_NERO.git
+cd directory_listing
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Open in browser:
+👉 http://localhost:5173
+
+Ensure MetaMask is connected to the **NERO Testnet**.
+
+---
+
+## ⚙️ Smart Contract Deployment (For Developers)
+
+1. Navigate to `evm-contracts` folder
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Update `hardhat.config.js` with your private key
+
+4. Deploy contract:
+
+```bash
+npx hardhat run scripts/deploy.js --network neroTestnet
+```
+
+5. Copy the deployed contract address and update:
+
+```js
+CONTRACT_ADDRESS;
+```
+
+inside `lib/nero.js`
+
+---
+
 <p align="center">
-  <b>⭐ If you liked the project, please don't forget to give a star</b>
+  <b>⭐ If you found this project useful, please consider giving it a star!</b>
 </p>
